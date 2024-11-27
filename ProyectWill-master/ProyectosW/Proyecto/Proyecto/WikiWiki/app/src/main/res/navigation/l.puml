@@ -1,0 +1,40 @@
+@startuml
+class LoginFragment {
+    +action_loginFragment_to_introFragment
+}
+
+class IntroFragment {
+    +action_introFragment_to_mainFragment
+}
+
+class MainFragment {
+    +action_mainFragment_to_menuFragment
+}
+
+class MenuFragment {
+    +action_menuFragment_to_creditFragment
+    +action_menuFragment_to_detailFavItemFragment
+}
+
+class CreditFragment
+class ItemListFragment {
+    +action_itemListFragment_to_favItemListFragment
+}
+
+class FavItemListFragment {
+    +action_favItemListFragment_to_detailItemFragment
+}
+
+class DetailItemFragment {
+    +action_detailItemFragment_to_mainFragment
+}
+
+LoginFragment --> IntroFragment
+IntroFragment --> MainFragment
+MainFragment --> MenuFragment
+MenuFragment --> CreditFragment
+MenuFragment --> DetailFavItemFragment
+ItemListFragment --> FavItemListFragment
+FavItemListFragment --> DetailItemFragment
+DetailItemFragment --> MainFragment
+@enduml
